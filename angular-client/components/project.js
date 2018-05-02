@@ -68,7 +68,8 @@ $scope.changeProj = function(projectId) {
 $scope.addproject = function () {
 	post({
 		projectName : $scope.projectName , 
-		projectDisc : $scope.projectDisc
+		projectDisc : $scope.projectDisc,
+		idontknow:$scope.idontknow,
 	},'/project');
   	get('/project');
   //	$window.location.href = 'app2.html';

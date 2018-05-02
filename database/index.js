@@ -19,6 +19,7 @@ var taskSchema = mongoose.Schema({
 var projectSchama = mongoose.Schema({
 	projectName : String , 
 	projectDisc : String,
+	idontknow:String,
 	tasks:[taskSchema]//each project has many tasks
 })
 var userSchema = mongoose.Schema({
@@ -146,7 +147,7 @@ var updateTask = function(query, newData,userId,projectId , callback) {
 
 // this function to add project to the user schema and project schema
 var addProject = function(data, callback) {
-	var project=new Project({projectName:data.projectName,projectDisc:data.projectDisc});
+	var project=new Project({projectName:data.projectName,projectDisc:data.projectDisc,idontknow:data.idontknow});
 	User.findById(data.project_id, function (err, user) {
 		if (err) return handleError(err);
 		user.projects.push(project);

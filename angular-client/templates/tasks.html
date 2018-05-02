@@ -21,6 +21,9 @@
 <!-- End Navigation Bar section--> 
 
 <div class="container">
+  <div id="btnContainer" class="md-form mt-0">
+             <li class="fa fa-search"></li>  <input type="text" id="myInput" placeholder="Search for names.." ng-model="searchText">
+           </div>
   <h1> Tasks:</h1>
   <table  class="table table-striped">
     <thead>
@@ -32,7 +35,7 @@
       </tr>
       <thead>
         <tbody>
-          <tr ng-repeat='task in tasksInfo'>
+          <tr  ng-repeat='task in tasksInfo| filter:searchText'>
             <td>{{task.description}}</td>
             <td>{{task.assignedTo}}</td>
             <td>{{task.complexity}}</td>

@@ -70,6 +70,7 @@ app.post('/project',function(req , res) {
 				var project={};
 				project['projectName']=req.body.projectName;
 				project['projectDisc']=req.body.projectDisc;
+				project['idontknow']=req.body.idontknow;
 				project['project_id']=req.session._id;
 				db.addProject(project , function (err , data) {
 					if(err) {
