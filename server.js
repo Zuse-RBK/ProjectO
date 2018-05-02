@@ -114,9 +114,13 @@ app.post('/project',function(req , res) {
 				project['projectName']=req.body.projectName;
 				project['projectDisc']=req.body.projectDisc;
 
+
 				project['projectPair']=team;
 
 				
+
+				project['idontknow']=req.body.idontknow;
+
 				project['project_id']=req.session._id;
 				db.addProject(project , function (err , data) {
 					if(err) {

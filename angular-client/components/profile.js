@@ -5,11 +5,11 @@ app.component('profile', {
 });
 
 
+
 app.controller('profile' ,[ '$scope','$http',function ($scope , $http) {
 	//$scope.hanan = "https://st.depositphotos.com/2218212/2938/i/950/depositphotos_29387653-stock-photo-facebook-profile.jpg"
 	//var hanan="https://st.depositphotos.com/2218212/2938/i/950/depositphotos_29387653-stock-photo-facebook-profile.jpg";
 	//$scope.hanan =hanan;
-
 
 	  var get = function () {
 		var response={
@@ -50,6 +50,7 @@ app.controller('profile' ,[ '$scope','$http',function ($scope , $http) {
   // if (file) {
   //   reader.readAsDataURL(file);
   // }
+
  
 
 

@@ -60,8 +60,36 @@ width:100%;
 
 
 <div class="container">
+
 <h1> Tasks:</h1>
      <button type="button" class="btn btn-primary active" data-toggle="modal" data-target="#myModalAdd">Add New Task</button>
+
+
+  <div id="btnContainer" class="md-form mt-0">
+             <li class="fa fa-search"></li>  <input type="text" id="myInput" placeholder="Search for names.." ng-model="searchText">
+           </div>
+  <h1> Tasks:</h1>
+  <table  class="table table-striped">
+    <thead>
+      <tr>
+        <th>Task Description</th>
+        <th>Assgined To</th>
+        <th>Task Complexity</th>
+        <th>Status</th>
+      </tr>
+      <thead>
+        <tbody>
+          <tr  ng-repeat='task in tasksInfo| filter:searchText'>
+            <td>{{task.description}}</td>
+            <td>{{task.assignedTo}}</td>
+            <td>{{task.complexity}}</td>
+            <td>{{task.status}}</td>
+
+            <td><button type="button" class="btn btn-danger active" ng-click="deleteTask(task.description)">Delete</button></td>
+            <td><button type="button" class="btn btn-warning active" ng-click="getOldTaskData(task)" data-toggle="modal" data-target="#myModalEdit">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
 
 
       <!-- Modal Edit -->
