@@ -25,9 +25,11 @@ app.controller('signup' , function ($scope,$http ) {
 		Address:$scope.Address,
 		Age:$scope.Age
 
-  }
 
-});
+  })
+
+};
+})
 // disable sign up button untill user fill all fields correctly 
 angular.module('mainApp').directive('disableBtn',
 	function() {

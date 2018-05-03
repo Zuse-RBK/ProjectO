@@ -109,6 +109,7 @@ app.controller('tasksCtrl', function ($scope, $http,$window){
 			url: '/Assignedto'
 		};
 		$http(response).then(function (data){
+			console.log("ma 3m yfoooot")
 			console.log("paaaaaaaaaairsssss",data)
 			$scope.team =data.data 
 		},function(){
@@ -117,6 +118,7 @@ app.controller('tasksCtrl', function ($scope, $http,$window){
     };
 
     $scope.Showassignedto = function () {
+    	console.log("whatss wrongggggg")
 	getAssignedto();
  		
  	}

@@ -2,7 +2,11 @@ let mongoose = require('mongoose');
 let bcrypt = require('bcrypt');
 let Schema =mongoose.Schema;
 
-mongoose.connect('mongodb://localhost:/PM-dbCD' );
+
+//mongoose.connect('mongodb://localhost:/PM-dbCD' );
+
+//mongoose.connect('mongodb://localhost:/PM-dbCD' );
+
 // mongoose.connect('mongodb://admin:admin@ds249269.mlab.com:49269/pm-db');
 
 

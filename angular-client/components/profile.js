@@ -24,7 +24,7 @@ app.controller('profile' ,[ '$scope','$http',function ($scope , $http) {
 	 }
 	 get()
 
-})
+
 
 	 $scope.selectFile= function(files){
 	 	console.log("hi")
@@ -90,7 +90,7 @@ app.controller('profile' ,[ '$scope','$http',function ($scope , $http) {
 //            var uploadUrl = "/savedata";
 //            fileUpload.uploadFileToUrl(file, uploadUrl);
 //  }
-})
+
 
 // app.service('fileUpload', ['$http', function ($http) {
 //         this.uploadFileToUrl = function(file, uploadUrl){
