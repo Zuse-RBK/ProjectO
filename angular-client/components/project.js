@@ -71,11 +71,7 @@ $scope.addproject = function () {
 	post({
 		projectName : $scope.projectName , 
 		projectDisc : $scope.projectDisc,
-
-		projectPair : $scope.projectPair,
-
-		idontknow:$scope.idontknow,
-
+		projectPair : $scope.projectPair
 	},'/project');
   	get('/project');
   //	$window.location.href = 'app2.html';

@@ -13,40 +13,6 @@ app.use(express.static(path.join(__dirname, '/angular-client/') ));
 app.use(bodyParser.json());
 app.use(session({secret:'this is secret'}));
 
-app.post('/chat',function(req , res){
-	db.addChat(req.body , function (err , data) {
-		if(err) {
-			res.send(err)
-		}
-		res.send(data)
-		console.log('data',data)
-	})
-	
-});
-app.get('/chat',function(req,res){
-	db.Chat.findAll({},function(err,data){
-		if(err) {
-			res.send(err)
-		}
-		res.send(data)
-
-	})
-})
-
-var storage = multer.diskStorage({
-  destination: './uploads/',
-  filename: function (req, file, cb) {
-    cb(null, file.originalname.replace(path.extname(file.originalname), "") + '-' + Date.now() + path.extname(file.originalname))
-  }
-})
-
-var upload = multer({ storage: storage });
-
-app.post('/savedata', upload.single('file'), function(req,res,next){
-    console.log('Uploade Successful ', req.file, req.body);
-});
-
-
 
 app.post('/user',function(req , res){
 	db.save(req.body, function (err , data) {
@@ -114,13 +80,9 @@ app.post('/project',function(req , res) {
 				project['projectName']=req.body.projectName;
 				project['projectDisc']=req.body.projectDisc;
 
-
 				project['projectPair']=team;
 
 				
-
-				project['idontknow']=req.body.idontknow;
-
 				project['project_id']=req.session._id;
 				db.addProject(project , function (err , data) {
 					if(err) {
@@ -138,7 +100,7 @@ app.get('/project', function(req,res) {
 	db.User.findOne({'_id':req.session._id},function (err, user) {
 		if(err){res.send(err)}
 
-			console.log(user.projects,"prooooojectssssssssssss0")
+			//console.log(user.projects,"prooooojectssssssssssss0")
 
 			res.status(200).send(user.projects);
 	});

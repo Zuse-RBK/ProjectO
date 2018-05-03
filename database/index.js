@@ -2,7 +2,11 @@ let mongoose = require('mongoose');
 let bcrypt = require('bcrypt');
 let Schema =mongoose.Schema;
 
-mongoose.connect('mongodb://localhost:/PM-dbCD' );
+
+//mongoose.connect('mongodb://localhost:/PM-dbCD' );
+
+//mongoose.connect('mongodb://localhost:/PM-dbCD' );
+
 // mongoose.connect('mongodb://admin:admin@ds249269.mlab.com:49269/pm-db');
 
 
@@ -33,13 +37,9 @@ var projectSchama = mongoose.Schema({
 	projectName : String , 
 	projectDisc : String,
 
-
 	projectPair: [String],//pair is team 
 
 
-
-
-	idontknow:String,
 
 	tasks:[taskSchema]//each project has many tasks
 })
@@ -217,8 +217,7 @@ var updateTask = function(query, newData,userId,projectId , callback) {
 
 // this function to add project to the user schema and project schema
 var addProject = function(data, callback) {
-<<<<<<< HEAD
-	var project=new Project({projectName:data.projectName,projectDisc:data.projectDisc,projectPair:data.projectPair,idontknow:data.idontknow});
+	var project=new Project({projectName:data.projectName,projectDisc:data.projectDisc,projectPair:data.projectPair});
 
 	for (var i=0;i<data.projectPair.length;i++){
 		User.findOne({username:data.projectPair[i]},function (err, user) {
@@ -230,7 +229,6 @@ var addProject = function(data, callback) {
 	})
 
 	}
-
 
 	User.findById(data.project_id, function (err, user) {
 		if (err) return handleError(err);

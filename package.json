@@ -19,7 +19,6 @@
   "homepage": "https://github.com/ShSukkar/GreenField#readme",
   "dependencies": {
     "angular": "^1.6.10",
-    "angular-animate": "^1.6.10",
     "bcrypt": "^2.0.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",

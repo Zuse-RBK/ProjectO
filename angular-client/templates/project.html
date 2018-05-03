@@ -38,14 +38,6 @@
             <div class="md-form mt-0">
                 <input type="text" class="form-control" name="project-desc" placeholder="Type project description"  ng-model="projectDisc">
             </div>
-
-            <div style="align-items: center;" class="col">
-            <h3>idontknow : </h3>
-            <div  class="md-form mt-0 ">
-                <input  type="text" class="form-control"   name="idontknow" placeholder="Type "  ng-model="idontknow">
-            </div>
-
-       </div>
         </div>
         <div class="col">
 
@@ -66,11 +58,11 @@
              <li class="fa fa-search"></li>  <input type="text" id="myInput" placeholder="Search for names.." ng-model="searchText">
         <button class="btn aa active" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
         <button class="btn aa " onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
-     
+      </div>
       <br>
 
       <div class="row" >
-        <div class="column"   ng-repeat = "project in projects | filter:searchText">
+        <div class="column"  ng-repeat = "project in projects | filter:searchText">
           <div class="w3-container">
             <ul class="w3-ul  w3-hoverable " >
               <li class="w3-bar" style="border: 2px solid black; padding: 10px; border-radius: 25px;" >
@@ -91,15 +83,8 @@
                 <h3 class="w3-bar-item  w3-hide-small" style="width:85px">{{$index+1}} 📃</h3>
                 <div class="w3-bar-item" ng-click="viewProjectId(project._id,project.projectName)">
                   <span class="w3-large" >{{project.projectDisc}}</span><br>
-
                   <span class="w3-large" >{{project.projectPair}}</span><br>
                    <span class="badge badge-primary badge-pill">Tasks : {{project.tasks.length}}</span>
-
-
-                  <span class="badge badge-primary badge-pill">Tasks : {{project.tasks.length}}</span>
-
-                  <span  data-toggle="tooltip"  class="badge badge-primary badge-pill">idontknow : {{project.idontknow}}</span>
-
                 </div>
               </li>
 
@@ -108,7 +93,6 @@
         </div>
       </div>
     </div>
-     </div>
 
       <!-- Modal fadeout, this will appear for user when he press on update button-->
       <div class="modal fade" id="myModalEdit" role="dialog">
