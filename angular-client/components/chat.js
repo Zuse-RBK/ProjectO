@@ -7,6 +7,12 @@ app.component('chat', {
 
 app.controller('chatCtrl', function ($scope, $http,$window){
 	// get all existing chat in db 
+
+	$scope.chats=[];
+
+
+
+	
 	var get = function () {
 		var response = {
 			method: 'GET',
@@ -19,6 +25,7 @@ app.controller('chatCtrl', function ($scope, $http,$window){
 		});
     };
     get();// get all existing chat once chat.html is rendered 
+
 
     //data parameter represent a chat details which required to be added to db (chat table) 
         var post = function (data,url) {
@@ -34,6 +41,20 @@ app.controller('chatCtrl', function ($scope, $http,$window){
 		});	
  	}
 
+
+   $scope.get=function(){
+	
+	 	var response = {
+			method: 'GET',
+			url: '/chat'
+		};
+		$http(response).then(function (data){
+			$scope.chatInfo=data.data
+			console.log($scope.chats[0].data[4].content)
+			
+		})
+		
+	}
 
  	$scope.addChat = function()
  	{

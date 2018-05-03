@@ -103,6 +103,7 @@ app.controller('tasksCtrl', function ($scope, $http,$window){
  		
  	}
 
+
  	var getAssignedto = function () {
 		var response = {
 			method: "GET",
@@ -120,4 +121,5 @@ app.controller('tasksCtrl', function ($scope, $http,$window){
 	getAssignedto();
  		
  	}
+
 });

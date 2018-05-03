@@ -6,12 +6,17 @@ mongoose.connect('mongodb://localhost:/PM-dbCD' );
 // mongoose.connect('mongodb://admin:admin@ds249269.mlab.com:49269/pm-db');
 
 
+mongoose.connect('mongodb://localhost:/PM-dbCD' );
+// mongoose.connect('mongodb://admin:admin@ds249269.mlab.com:49269/pm-db');
+
+
 //mongoose.connect('mongodb://localhost:/PM-db' );
 mongoose.connect('mongodb://localhost/pm-db');
 
 //mongoose.connect('mongodb://localhost:/PM-db' );
 
 //mongoose.connect('mongodb://admin:admin@ds249269.mlab.com:49269/pm-db');
+
 
 
 
@@ -44,8 +49,10 @@ var userSchema = mongoose.Schema({
 	password :{type : String ,required :true}, 
 	email :{type : String ,required :true}, 
 
+
 	Address : {type : String , required :true},
 	Age : {type : Number , required:true},
+
 	projects:[projectSchama]//each user has many projects
 	
 });

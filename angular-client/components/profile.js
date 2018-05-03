@@ -26,6 +26,10 @@ app.controller('profile' ,[ '$scope','$http',function ($scope , $http) {
 
 })
 
+
+
+})
+
 	 $scope.selectFile= function(files){
 	 	console.log("hi")
 
@@ -123,6 +127,7 @@ app.controller('profile' ,[ '$scope','$http',function ($scope , $http) {
 //            }
 //         };
 //      }]);
+
 
 
 

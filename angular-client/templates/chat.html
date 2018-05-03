@@ -20,7 +20,32 @@
   	 <button type="button" class="btn btn-success" ng-click="addChat()">Send</button>
   	  <button type="button" class="btn btn-danger" ng-click="get()">Recieve</button>
   	</center>
+
+        <div class="sub-header">
+           <div class="well"><center>inbox</center></div>
+        </div>
+<div class="container">
+    
+    <div>
+      <div   >
+        <div   ng-repeat='chat in chatInfo'   >
+          <center>
+                    <div class="list-group-item" style="border:2px solid black;border-radius: 25px;width:500px ;height:100px">
+                    <p > sendFrom: {{chat.sendFrom}}</p>
+                    <p >message:{{chat.content}}</p>
+                    </div><hr>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+	
+
   </div>
 </div>
 	
 </div>
+
