@@ -6,14 +6,42 @@ const session = require('express-session');
 const app = express();
 const expressValidator = require('express-validator');
 const bcrypt =require('bcrypt');
-
 app.use(expressValidator())
 app.use(express.static(path.join(__dirname, '/angular-client/') ));
 app.use(bodyParser.json());
-app.use(session({secret:'this is secret'}));
+app.use(session({secret:'this is secret'
+}));
 
+app.post('/chat',function(req , res){
+	db.addChat(req.body , function (err , data) {
+		if(err) {
+			res.send(err)
+		}
+		res.send(data)
+		console.log('data',data)
+	})
+	
+});
+app.get('/chat', function (req, res) {
+    console.log('I received a GET request');
+    db.User.findOne({'_id' : req.session._id},function (err, data) {
+		if(err) {
+			res.send(err)
+		}
+		// res.send(data)
+		db.Chat.find({sendTo:data.username}, function(err, chat) {
+    	// console.log('chat',chat)
+        if(!err){
+           res.json(chat);
+        }
+
+    });
+	})
+    
+
+});
 app.post('/user',function(req , res){
-	db.save(req.body , function (err , data) {
+	db.save(req.body, function (err , data) {
 		if(err) {
 			res.send(err)
 		}
